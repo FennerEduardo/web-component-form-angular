@@ -10,7 +10,7 @@ const build = async () =>{
         './dist/form-files/main.js'
       ];
 
-      await fs.ensureDir('widget');
-      await concat(files, 'widget/app.js');
+      await fs.ensureDir('./dist');
+      await concat(files, './dist/form-files/app.js');
 }
 build();

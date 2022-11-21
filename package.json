@@ -5,7 +5,7 @@
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:component": "ng build --watch --output-hashing none",
+    "build:component": "ng build --output-hashing none && node concat-script.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
