@@ -1,0 +1,18 @@
+<div class="container">
+  <form ngForm class="row py-5">
+    <div class="col">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input ng-model="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre Completo"
+        aria-label="Nombre Completo"  (input)="setName($event)">
+    </div>
+    <div class="col">
+      <label for="documento" class="form-label">Documento</label>
+      <input ng-model="documento" type="file" id="documento" class="form-control" placeholder="Documento"
+        aria-label="documento"  (change)="onFileSelected($event)">
+    </div>
+    <div class="col-12 py-4">
+      <button type="submit" class="btn btn-primary" (click)="onUpload($event)">Enviar</button>
+    </div>
+  </form>
+</div>
+
