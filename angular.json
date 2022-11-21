@@ -17,9 +17,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ventanilla",
+            "outputPath": "dist/form-files",
             "index": "src/index.html",
-            "baseHref" : "/ventanilla",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",

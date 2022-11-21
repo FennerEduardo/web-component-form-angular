@@ -16,14 +16,16 @@ import { createCustomElement } from '@angular/elements';
     HttpClientModule,
   ],
   providers: [],
-  bootstrap: [ MainFormComponent]
+  bootstrap: [ AppComponent,
+     MainFormComponent
+     ]
 })
 export class AppModule {
   constructor(private injector: Injector) {
     const elementCustom = createCustomElement(MainFormComponent, {
       injector: this.injector
     });
-    customElements.define('pp-main-form', elementCustom);
+    customElements.define('app-main-form', elementCustom);
   }
   ngDoBoostrap(): void { }
 
