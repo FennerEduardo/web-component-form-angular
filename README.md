@@ -28,3 +28,7 @@ Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To u
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## Build Component
+
+Run `npm build:component` to build the project. The build artifacts will be stored in the `dist/` directory and it will merge all scripts in app.js.
