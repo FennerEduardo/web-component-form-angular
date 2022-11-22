@@ -12,5 +12,9 @@ const build = async () =>{
 
       await fs.ensureDir('./dist');
       await concat(files, './dist/form-files/app.js');
+
+      files.forEach(file => {
+        fs.unlinkSync(file);
+      })
 }
 build();
