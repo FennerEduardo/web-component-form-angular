@@ -5,13 +5,13 @@ const concat = require('concat');
 
 const build = async () =>{
     const files = [
-        './dist/form-files/runtime.js',
-        './dist/form-files/polyfills.js',
-        './dist/form-files/main.js'
+        './dist/ventanilla/runtime.js',
+        './dist/ventanilla/polyfills.js',
+        './dist/ventanilla/main.js'
       ];
 
       await fs.ensureDir('./dist');
-      await concat(files, './dist/form-files/app.js');
+      await concat(files, './dist/ventanilla/app.js');
 
       files.forEach(file => {
         fs.unlinkSync(file);
