@@ -10,6 +10,11 @@
       <input ng-model="documento" type="file" id="documento" class="form-control" placeholder="Documento"
         aria-label="documento"  (change)="onFileSelected($event)">
     </div>
+    <div class="col">
+      <label for="json" class="form-label">json</label>
+      <input ng-model="json" type="file" id="json" class="form-control" placeholder="json"
+        aria-label="json"  (change)="onJsonSelected($event)">
+    </div>
     <div class="col-12 py-4">
       <button type="submit" class="btn btn-primary" (click)="onUpload($event)">Enviar</button>
     </div>
