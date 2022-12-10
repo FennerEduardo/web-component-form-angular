@@ -1,23 +1,54 @@
 <div class="container">
   <form ngForm class="row py-5">
-    <div class="col">
+    <div class="col-12">
+      <div class="container-carga-de-archivo-govco">
+        <div class="loader-carga-de-archivo-govco">
+          <div class="all-input-carga-de-archivo-govco">
+            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active"
+              data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple (change)="selectingFiles($event)"  ngModel #file/>
+            <label for="inputFile" class="label-carga-de-archivo-govco">Etiqueta*</label>
+            <label for="inputFile" class="container-input-carga-de-archivo-govco">
+              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
+              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
+            </label>
+            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
+          </div>
+          <div class="load-button-carga-de-archivo-govco">
+            <div class="load-carga-de-archivo-govco">
+              <!-- indicador de carga -->
+              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;"
+                role="status">
+                <span class="visually-hidden">Cargando...</span>
+              </div>
+              <!-- end indicador de carga -->
+            </div>
+            <button class="button-loader-carga-de-archivo-govco" disabled (click)="clickButtonFile($event)">Cargar archivo</button>
+          </div>
+        </div>
+
+        <div class="container-detail-carga-de-archivo-govco">
+          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
+          <div class="attached-files-carga-de-archivo-govco"></div>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-12">
       <label for="nombre" class="form-label">Nombre</label>
       <input ng-model="nombre" type="text" id="nombre" class="form-control" placeholder="Nombre Completo"
-        aria-label="Nombre Completo"  (input)="setName($event)">
+        aria-label="Nombre Completo" (input)="setName($event)">
     </div>
-    <div class="col">
+    <div class="col-12">
       <label for="documento" class="form-label">Documento</label>
       <input ng-model="documento" type="file" id="documento" class="form-control" placeholder="Documento"
-        aria-label="documento"  (change)="onFileSelected($event)">
+        aria-label="documento" (change)="onFileSelected($event)">
     </div>
-    <div class="col">
+    <div class="col-12">
       <label for="json" class="form-label">json</label>
-      <input ng-model="json" type="file" id="json" class="form-control" placeholder="json"
-        aria-label="json"  (change)="onJsonSelected($event)">
-    </div>
+      <input ng-model="json" type="file" id="json" class="form-control" placeholder="json" aria-label="json"
+        (change)="onJsonSelected($event)">
+    </div> -->
     <div class="col-12 py-4">
       <button type="submit" class="btn btn-primary" (click)="onUpload($event)">Enviar</button>
     </div>
   </form>
 </div>
-
