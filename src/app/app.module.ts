@@ -5,11 +5,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { MainFormComponent } from './main-form/main-form.component';
 import { createCustomElement } from '@angular/elements';
+import { DeptosCiudadesComponent } from './components/deptos-ciudades/deptos-ciudades.component';
+import { SelectComponent } from './components/select/select.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MainFormComponent
+    MainFormComponent,
+    DeptosCiudadesComponent,
+    SelectComponent
   ],
   imports: [
     BrowserModule,

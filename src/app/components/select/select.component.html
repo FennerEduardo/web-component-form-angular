@@ -1,0 +1,10 @@
+<div ngClass="{{divClasses}}">
+  <label for="{{idSelect}}" ngClass="{{labelClasses}}">{{label}} </label>
+  <select disabled="{{disabledSelect}}" ng-model="selected" (change)="onChange()" id="{{idSelect}}" ngClass="{{selectClasses}}"
+    title="{{titleSelect}}">
+    <option value="">Seleccione</option>
+    <option value="{{option.value}}" *ngFor="let option of optionsSelect" [selected]="option.value === optionSelected">
+      {{option.text}}
+    </option>
+  </select>
+</div>
