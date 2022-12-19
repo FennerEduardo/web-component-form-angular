@@ -18,6 +18,8 @@ export class DeptosCiudadesComponent implements OnInit {
   @Input('propDeptoId') propDeptoId = '';
   @Input('propCiudadId') propCiudadId = '';
   @Input('divClasses') divClasses = '';
+  @Input('requiredDeptos') requiredDeptos = '';
+  @Input('requiredCiudades') requiredCiudades = '';
   @Output() changeDepartamento: EventEmitter<any> = new EventEmitter();
   @Output() changeCiudad: EventEmitter<any> = new EventEmitter();
 

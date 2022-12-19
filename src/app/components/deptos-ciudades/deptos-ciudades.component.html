@@ -1,11 +1,10 @@
 <div class="{{divClasses}}">
   <app-select [divClasses]="'form-group select-govco '" [labelClasses]="''"
     [selectClasses]="'form-control selectpicker mt-3 disabled'" [optionsSelect]="OptionsDeptos" [label]="'Departamento* '"
-    [idSelect]="'depto'" [titleSelect]="'Seleccione Departamento'" (change)="changeDepto($event)" [optionSelected]="'14'" [disabledSelect]="'disabled'"></app-select>
+    [idSelect]="'depto'" [titleSelect]="'Seleccione Departamento'" (change)="changeDepto($event)" [optionSelected]="'14'" [disabledSelect]="'disabled'"  [requiredSelect]="'{{requiredDeptos}}'"></app-select>
 </div>
 <div class="{{divClasses}}">
   <app-select [divClasses]="'form-group select-govco '" [labelClasses]="''"
     [selectClasses]="'form-control selectpicker mt-3 ms-3 disabled'" [optionsSelect]="OptionsCiudades" [label]="'Ciudad* '"
-    [idSelect]="'ciudad'" [titleSelect]="'Seleccione Ciudad'" (change)="changeCity($event)" [optionSelected]="'14'" [disabledSelect]="'disabled'"></app-select>
-
+    [idSelect]="'ciudad'" [titleSelect]="'Seleccione Ciudad'" (change)="changeCity($event)" [optionSelected]="'14'" [disabledSelect]="'disabled'"  [requiredSelect]="'{{requiredCiudades}}'"></app-select>
 </div>

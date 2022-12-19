@@ -7,13 +7,15 @@ import { MainFormComponent } from './main-form/main-form.component';
 import { createCustomElement } from '@angular/elements';
 import { DeptosCiudadesComponent } from './components/deptos-ciudades/deptos-ciudades.component';
 import { SelectComponent } from './components/select/select.component';
+import { FileInputComponent } from './components/file-input/file-input.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MainFormComponent,
     DeptosCiudadesComponent,
-    SelectComponent
+    SelectComponent,
+    FileInputComponent
   ],
   imports: [
     BrowserModule,

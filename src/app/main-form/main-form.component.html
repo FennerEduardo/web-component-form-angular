@@ -1,13 +1,13 @@
 <div class="container">
   <h1 class="text-center mt-5">Prueba Cancelación de Gravamenes</h1>
-  <form ngForm class="row py-5">
+  <form class="row py-5" >
     <div class="col-6">
       <div class="form-group gov-co-form-group col-12 mt-3">
         <app-select [divClasses]="'gov-co-dropdown w-100'" [labelClasses]="'mb-2'"
           [selectClasses]="'form-control selectpicker'" [optionsSelect]="optionsIdentificationType"
-          [label]="'Tipo de documento*'" [idSelect]="'IdentificationType'"
-          [titleSelect]="'Tipo de identificación'"
-          (change)="changeSelectoptionsIdentificationType($event)" [optionSelected]="IdentificationTypeSelected">
+          [label]="'Tipo de documento*'" [idSelect]="'IdentificationType'" [titleSelect]="'Tipo de identificación'"
+          (change)="changeSelectoptionsIdentificationType($event)" [optionSelected]="IdentificationTypeSelected"
+          [requiredSelect]="'required'">
         </app-select>
       </div>
 
@@ -27,26 +27,27 @@
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="id">Identificación*</label>
-        <input type="text" id="id" placeholder="Ejemplo: 1234567890" (input)="setIdentification($event)" />
+        <input type="text" id="id" placeholder="Ejemplo: 1234567890" (input)="setIdentification($event)" required />
       </div>
     </div>
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="name">Nombres*</label>
-        <input type="text" id="name" placeholder="Ejemplo: José María"  (input)="setName($event)"/>
+        <input type="text" id="name" placeholder="Ejemplo: José María" (input)="setName($event)" required />
       </div>
     </div>
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="last-name">Apellidos*</label>
-        <input type="text" id="last-name" placeholder="Ejemplo: González Martínez" (input)="setLastName($event)" />
+        <input type="text" id="last-name" placeholder="Ejemplo: González Martínez" (input)="setLastName($event)" required/>
       </div>
     </div>
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="email">Correo Electronico*</label>
         <div class="container-input-texto-govco">
-          <input type="mail" id="email" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail" (input)="setEmail($event)"/>
+          <input type="mail" id="email" aria-invalid="false" placeholder="Ej: correo@email.com" typeData="mail"
+            (input)="setEmail($event)" required/>
           <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success"
             aria-hidden="true"></div>
           <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error"
@@ -57,14 +58,15 @@
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="address">Dirección*</label>
-        <input type="text" id="address" placeholder="Ejemplo: Calle 4 sur # 55-23" (input)="setAddress($event)"/>
+        <input type="text" id="address" placeholder="Ejemplo: Calle 4 sur # 55-23" (input)="setAddress($event)" required/>
       </div>
     </div>
     <div class="col-6">
       <div class="entradas-de-texto-govco">
         <label for="phone">Teléfono*</label>
         <div class="container-input-texto-govco">
-          <input type="tel" id="phone" aria-invalid="false" placeholder="Ej: +57 310 4021752" typeData="phone" (input)="setPhone($event)"/>
+          <input type="tel" id="phone" aria-invalid="false" placeholder="Ej: +57 310 4021752" typeData="phone"
+            (input)="setPhone($event)" required />
           <div class="icon-entradas-de-texto-govco success-icon-entradas-de-texto-govco" aria-label="success"
             aria-hidden="true"></div>
           <div class="icon-entradas-de-texto-govco error-icon-entradas-de-texto-govco" aria-label="error"
@@ -77,47 +79,20 @@
       <div class="row mb-3">
         <app-deptos-ciudades class="col-12 d-flex flex-row" [divClasses]="'w-50'"
           (changeDepartamento)="settingDeptoId($event)" (changeCiudad)="settingCiudadId($event)" [propDeptoId]="deptoId"
-          [propCiudadId]="ciudadId"></app-deptos-ciudades>
+          [propCiudadId]="ciudadId" [requiredCiudades]="'required'" [requiredDeptos]="'required'"></app-deptos-ciudades>
       </div>
     </div>
-
     <div class="col-12">
-      <div class="container-carga-de-archivo-govco">
-        <div class="loader-carga-de-archivo-govco">
-          <div class="all-input-carga-de-archivo-govco">
-            <input type="file" name="inputFile" id="inputFile" class="input-carga-de-archivo-govco active"
-              data-error="0" data-action="uploadFile" data-action-delete="deleteFile" multiple
-              (change)="selectingFiles($event)" ngModel #file />
-            <label for="inputFile" class="label-carga-de-archivo-govco">Documentos*</label>
-            <label for="inputFile" class="container-input-carga-de-archivo-govco">
-              <span class="button-file-carga-de-archivo-govco">Seleccionar archivo</span>
-              <span class="file-name-carga-de-archivo-govco">Sin archivo seleccionado</span>
-            </label>
-            <span class="text-validation-carga-de-archivo-govco">Cualquier tipo de archivo. Peso máximo: 2 MB</span>
-          </div>
-          <div class="load-button-carga-de-archivo-govco">
-            <div class="load-carga-de-archivo-govco">
-              <!-- indicador de carga -->
-              <div class="spinner-indicador-de-carga-govco" style="width: 32px; height: 32px; border-width: 6px;"
-                role="status">
-                <span class="visually-hidden">Cargando...</span>
-              </div>
-              <!-- end indicador de carga -->
-            </div>
-            <button class="button-loader-carga-de-archivo-govco" disabled (click)="clickButtonFile($event)">Cargar
-              archivo</button>
-          </div>
-        </div>
-
-        <div class="container-detail-carga-de-archivo-govco">
-          <span class="alert-carga-de-archivo-govco visually-hidden"></span>
-          <div class="attached-files-carga-de-archivo-govco"></div>
-        </div>
-      </div>
+      <app-file-input [extensions]="['docx', 'doc', 'jpg', 'pdf']" [idElement]="'main-document'" [quantity]="1"
+        [size]="20000" [label]="'Documento Principal*'" (loadFiles)="changeDoc($event)" (fileDeleted)="deleteFile($event)"></app-file-input>
+    </div>
+    <div class="col-12">
+      <app-file-input [extensions]="['docx', 'doc', 'jpg', 'pdf']" [idElement]="'anexos'" [quantity]="10"
+        [size]="200000" [label]="'Anexos*'" (loadFiles)="changeFiles($event)" (fileDeleted)="deleteFile($event)"></app-file-input>
     </div>
 
     <div class="col-12 py-4">
-      <button type="submit" class="btn btn-primary" (click)="onUpload($event)">Enviar</button>
+      <button type="submit" class="btn-govco fill-btn-govco" (click)="onUpload($event)" id="btnSubmit">Enviar</button>
     </div>
   </form>
 </div>

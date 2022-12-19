@@ -18,6 +18,7 @@ export class SelectComponent implements OnInit {
   @Input('titleSelect') titleSelect = '';
   @Input('optionSelected') optionSelected = '';
   @Input('disabledSelect') disabledSelect = '';
+  @Input('requiredSelect') requiredSelect = '';
   @Output() change: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
